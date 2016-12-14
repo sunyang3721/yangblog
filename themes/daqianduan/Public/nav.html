@@ -1,63 +1,68 @@
 {:hook('body_start')}
-<div class="navbar navbar-fixed-top">
-   <div class="navbar-inner">
-     <div class="container">
-       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-         <span class="icon-bar"></span>
-       </a>
-       <a class="brand" href="__ROOT__/"><img src="__TMPL__Public/assets/images/logo.png"/></a>
-       <div class="nav-collapse collapse" id="main-menu">
-       	<?php
+<header class="header">
+	<div class="container">
+		<h1 class="logo"><a href="__ROOT__/" title="{$site_name}">{$site_name}</a></h1>
+		<div class="brand">{$site_name}<br>www.kuwuya.com</div>
+
+		<?php
 			$effected_id="main-menu";
-		  	$filetpl="<a href='\$href' target='\$target'>\$label</a>";
-		  	$foldertpl="<a href='\$href' target='\$target' class='dropdown-toggle' data-toggle='dropdown'>\$label <b class='caret'></b></a>";
-		  	$ul_class="dropdown-menu" ;
+		  	$filetpl="<a href='\$href' target='\$target'><b class='\$icon'></b> \$label</a>";
+		  	$foldertpl="<a href='\$href' target='\$target' class='dropdown-toggle' data-toggle='dropdown'>\$label <b class='fa fa-angle-down'></b></a>";
+		  	$ul_class="sub-menu" ;
 		  	$li_class="li-class" ;
-		  	$style="nav";
-		  	$showlevel=6;
-		  	$dropdown='dropdown';
+		  	$style="site-nav site-navbar";
+		  	$showlevel=3;
+		  	$dropdown='';
 		  	echo sp_get_menu("main",$effected_id,$filetpl,$foldertpl,$ul_class,$li_class,$style,$showlevel,$dropdown);
 		?>
-		
-		<ul class="nav pull-right" id="main-menu-user">
-			<!-- <li class="user login" style="margin-left: 5px;">
-	            <a class="dropdown-toggle user notifactions" href="{:U('user/notification/index')}">
-	            <i class="fa fa-envelope"></i>
-	            <span class="count">0</span>
-	            </a>
-          	</li> -->
-			<li class="dropdown user login">
-	            <a class="dropdown-toggle user" data-toggle="dropdown" href="#">
-	            <img src="__TMPL__Public/assets/images/headicon.png" class="headicon"/>
-	            <span class="user-nicename"></span><b class="caret"></b></a>
-	            <ul class="dropdown-menu pull-right">
-	               <li><a href="{:U('user/center/index')}"><i class="fa fa-user"></i> &nbsp;个人中心</a></li>
-	               <li class="divider"></li>
-	               <li><a href="{:U('user/index/logout')}"><i class="fa fa-sign-out"></i> &nbsp;退出</a></li>
-	            </ul>
-          	</li>
-          	<li class="dropdown user offline">
-	            <a class="dropdown-toggle user" data-toggle="dropdown" href="#">
-	           		<img src="__TMPL__Public/assets/images/headicon.png" class="headicon"/>登录<b class="caret"></b>
-	            </a>
-	            <ul class="dropdown-menu pull-right">
-	               <li><a href="{:U('api/oauth/login',array('type'=>'sina'))}"><i class="fa fa-weibo"></i> &nbsp;微博登录</a></li>
-	               <li><a href="{:U('api/oauth/login',array('type'=>'qq'))}"><i class="fa fa-qq"></i> &nbsp;QQ登录</a></li>
-	               <li><a href="{:leuu('user/login/index')}"><i class="fa fa-sign-in"></i> &nbsp;登录</a></li>
-	               <li class="divider"></li>
-	               <li><a href="{:leuu('user/register/index')}"><i class="fa fa-user"></i> &nbsp;注册</a></li>
-	            </ul>
-          	</li>
-		</ul>
-		<div class="pull-right">
-        	<form method="post" class="form-inline" action="{:U('portal/search/index')}" style="margin:18px 0;">
-				 <input type="text" class="" placeholder="Search" name="keyword" value="{:I('get.keyword')}"/>
-				 <input type="submit" class="btn btn-info" value="Go" style="margin:0"/>
-			</form>
+		<!-- <ul class="site-nav site-navbar">
+			<li class="navto-home active"><a href="http://www.daqianduan.com">首页</a></li>
+			<li class="navto-wp"><a href="http://themebetter.com">Wordpress主题</a>
+				<ul class="sub-menu">
+					<li class="navto-htmlcss"><a href="http://www.daqianduan.com/front/htmlcss">HTML/CSS</a></li>
+					<li class="navto-javascript"><a href="http://www.daqianduan.com/front/javascript">Javascript</a></li>
+					<li class="navto-news"><a href="http://www.daqianduan.com/front/news">前端资讯</a></li>
+					<li class="navto-resource"><a href="http://www.daqianduan.com/front/resource">技巧资源</a></li>
+				</ul>
+			</li>
+			<li class="navto-front"><a href="http://www.daqianduan.com/front">前端开发 <i class="fa fa-angle-down"></i></a>
+				<ul class="sub-menu">
+					<li class="navto-htmlcss"><a href="http://www.daqianduan.com/front/htmlcss">HTML/CSS</a></li>
+					<li class="navto-javascript"><a href="http://www.daqianduan.com/front/javascript">Javascript</a></li>
+					<li class="navto-news"><a href="http://www.daqianduan.com/front/news">前端资讯</a></li>
+					<li class="navto-resource"><a href="http://www.daqianduan.com/front/resource">技巧资源</a></li>
+				</ul>
+			</li>
+			<li class="navto-job"><a href="http://www.daqianduan.com/job">前端开发招聘</a></li>
+			<li class="navto-nav"><a href="http://www.daqianduan.com/nav">前端开发导航</a></li>
+			<li class="navto-search"><a href="javascript:;" class="search-show active"><i class="fa fa-search"></i></a></li>
+		</ul> -->
+		<div class="topbar">
+		<?php
+			$oldnav =  sp_get_menu_tree('2');  //副导航
+		?>
+			<ul class="site-nav topmenu">
+			<volist name="oldnav" id="vo">
+				<li><a href="{$vo['href']}" target="{$vo['target']}"><b class="{$vo['icon']}"></b> {$vo['label']}</a></li>
+			</volist>
+				<!-- <li><a href="http://www.daqianduan.com/contact">联系我们</a></li>
+				<li><a href="http://www.daqianduan.com/tools">前端工具箱</a></li>
+				<li><a href="http://www.daqianduan.com/links">友情链接</a></li>
+				<li>
+					<a href="http://www.daqianduan.com/about">关注大前端 <i class="fa fa-angle-down"></i></a>
+					<ul class="sub-menu">
+						<li><a target="_blank" rel="external nofollow" href="http://www.daqianduan.com/go/feedmail"><i class="fa fa-envelope-o"></i> 邮件订阅更新</a></li>
+						<li><a target="_blank" href="http://www.daqianduan.com/feed"><i class="fa fa-rss"></i> RSS订阅</a></li>
+					</ul>
+				</li> -->
+			</ul>
 		</div>
-       </div>
-     </div>
-   </div>
- </div>
+	</div>
+</header>
+<div class="site-search">
+	<div class="container">
+		<form method="get" class="site-search-form" action="http://www.daqianduan.com/" >
+			<input class="search-input" name="s" type="text" placeholder="输入关键字搜索"><button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
+		</form>
+	</div>
+</div>
