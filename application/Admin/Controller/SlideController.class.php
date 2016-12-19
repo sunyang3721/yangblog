@@ -16,15 +16,9 @@ class SlideController extends AdminbaseController{
 	
 	// 幻灯片列表
 	public function index(){
-		$cates=array(
-			array("cid"=>"0","cat_name"=>"默认分类"),
-		);
+		
 		$categorys=$this->slidecat_model->field("cid,cat_name")->where("cat_status!=0")->select();
-		if($categorys){
-			$categorys=array_merge($cates,$categorys);
-		}else{
-			$categorys=$cates;
-		}
+
 		$this->assign("categorys",$categorys);
 		$where=array();
 		$cid = I('post.cid',0,'intval');

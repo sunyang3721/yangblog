@@ -17,9 +17,9 @@
 			</php>
 			<div id="homeslider" class="carousel slide" data-ride="carousel">
 				<ol class="carousel-indicators">
-					<li data-target="#homeslider" data-slide-to="0" class="active"></li>
-					<li data-target="#homeslider" data-slide-to="1"></li>
-					<li data-target="#homeslider" data-slide-to="2"></li>
+					<foreach name="home_slides" item="vo">
+					<li data-target="#homeslider" data-slide-to="{$key}" class="<eq name="key" value="0"> active </eq>"></li>
+					</foreach>
 				</ol>
 				<div class="carousel-inner" role="listbox">
 					<foreach name="home_slides" item="vo">
@@ -36,19 +36,12 @@
 				</a>
 			</div>
 			<article class="excerpt-see excerpt-see-index">
-				<h2>
-					<a class="red" href="http://www.daqianduan.com/job">【前端招聘】</a>
-					<a href="http://www.daqianduan.com/6348.html" title="Mobvista-汇量科技招聘前端H5工程师（北京 20K+）_大前端">Mobvista-汇量科技招聘前端H5工程师（北京 20K+）</a>
-				</h2>
-				<p class="note">汇量科技（Mobvista）于2013 年3月开始开展业务，旗下拥有覆盖全球的移动数字营销平台和移动网游海外发行平台。汇量科技专注于为广告主与应用开发者提供高效的用户获取及流量变现综合解决方案，2015年在移动数据监测机构AppsFlyer...</p>
+				    {:sp_getad("home")}				
 			</article>
 			<div class="title">
 				<h3>最新发布</h3>
 				<ul class="more">
-					<li><a target="_blank" href="http://www.daqianduan.com/theme/xiu">XIU主题</a></li>
-					<li><a target="_blank" href="http://www.daqianduan.com/theme/d8">D8主题</a></li>
-					<li><a target="_blank" href="http://www.daqianduan.com/nav">前端导航</a></li>
-					<li><a target="_blank" href="http://www.daqianduan.com/tools">前端工具箱</a></li>
+					{:sp_getad("tabs")}	
 				</ul>
 			</div>
 			<article class="excerpt excerpt-1 excerpt-text">
@@ -124,58 +117,26 @@
 	</div>
 	
 	<aside class="sidebar">
-		<div class="widget widget_ui_textads">
-			<a class="style02" href="http://themebetter.com/theme/dux" target="_blank">
-				<strong>吐血推荐</strong>
-				<h2>DUX主题 新一代主题</h2>
-				<p>DUX Wordpress主题是大前端ess主题经验设计而成；更加扁平的风格和干净白色的架构会让网站显得内涵而出色...</p>
-			</a>
-		</div>
-		<div class="widget widget_ui_ads">
-			<div class="item"></div>
-		</div>
-		<div class="widget widget_ui_ads">
-			<div class="item"><a href="http://themebetter.com" target="_blank"><img src="picture/themebetter.gif"></a></div>
-		</div>
-		<div class="widget widget_ui_ads">
-			<div class="item"><a href="http://www.daqianduan.com/go/aliyun-m" target="_blank"><img src="picture/ads-aliyun.jpg"></a></div>
-		</div>
-
-		<div class="widget widget_ui_fronts"><h3>前端开发</h3>
-			<ul class="ebox">
-				<li class="ebox-i">
-					<h4>前端网址导航</h4>
-					<p>扁平化设计、自定义颜色风格、多功能配置</p>
-					<a class="btn btn-default btn-sm" target="_blank" href="http://www.daqianduan.com/nav">立即使用</a>
-				</li>
-				<li class="ebox-i">
-					<h4>产品-交互-设计</h4>
-					<p>展示各种精彩炫酷的网站设计和用户体验良好的设计元素</p>
-					<a class="btn btn-default btn-sm" target="_blank" href="http://www.daqianduan.com/design">开始学习</a>
-				</li>
-				<li class="ebox-i">
-					<h4>名企招聘</h4>
-					<p>名企前端招聘大集合，有能量就释放出来吧</p>
-					<a class="btn btn-default btn-sm" target="_blank" href="http://www.daqianduan.com/job">查看职位</a>
-				</li>
-				<li class="ebox-i">
-					<h4>Sublime Text 3</h4>
-					<p>前端开发利器，全套快捷键和插件推荐</p>
-					<a class="btn btn-default btn-sm" target="_blank" href="http://www.daqianduan.com/4820.html">开始使用</a>
-				</li>
-				<li class="ebox-i ebox-100">
-					<h4>前端开发工具箱</h4>
-					<p>
-						<a target="_blank" href="http://www.daqianduan.com/tools?t=js">JS压缩/加密/格式化</a> | 
-						<a target="_blank" href="http://www.daqianduan.com/tools?t=css">CSS压缩/格式化</a> | 
-						<a target="_blank" href="http://www.daqianduan.com/tools?t=highlight">在线代码高亮</a>
-					</p>
-					<a class="btn btn-default btn-sm" target="_blank" href="http://www.daqianduan.com/tools">立即使用</a>
-				</li>
+		{:sp_getad("ad_right_1")}
+		{:sp_getad("ad_right_2")}
+		{:sp_getad("ad_right_3")}
+		{:sp_getad("ad_right_4")}
+		{:sp_getad("ad_right_5")}
+		{:sp_getad("ad_right_6")}
+		{:sp_getad("ad_right_7")}
+		{:sp_getad("ad_right_8")}
+		<div class="widget widget_ui_posts hide">
+			<h3>最新发布</h3>
+			<ul>
+				<li><a href="#"><span class="thumbnail"><img data-src="http://www.daqianduan.com/wp-content/uploads/2016/08/MobvistaLOGO.jpg" class="thumb" src="http://www.daqianduan.com/wp-content/uploads/2016/08/MobvistaLOGO.jpg" style="display: block;"></span><span class="text">Mobvista-汇量科技招聘前端H5工程师（北京 20K+）</span><span class="muted">2016-08-22</span><span class="muted">评论()</span></a></li>
+				<li><a href="#"><span class="thumbnail"><img data-src="http://www.daqianduan.com/wp-content/uploads/2016/08/qxwzLOGO.jpg" class="thumb" src="http://www.daqianduan.com/wp-content/uploads/2016/08/qxwzLOGO.jpg" style="display: block;"></span><span class="text">阿里-千寻招聘资深前端（上海）</span><span class="muted">2016-08-22</span><span class="muted">评论()</span></a></li>
+				<li><a href="#"><span class="thumbnail"><img data-src="http://www.daqianduan.com/wp-content/uploads/2016/08/sohu_220150.png" class="thumb" src="http://www.daqianduan.com/wp-content/uploads/2016/08/sohu_220150.png" style="display: block;"></span><span class="text">搜狐社交产品中心-中级web前端开发工程师（北京 14K+）</span><span class="muted">2016-08-22</span><span class="muted">评论()</span></a></li>
+				<li><a href="#"><span class="thumbnail"><img data-src="http://www.daqianduan.com/wp-content/uploads/2016/04/zhenai.png" class="thumb" src="http://www.daqianduan.com/wp-content/uploads/2016/04/zhenai.png" style="display: block;"></span><span class="text">珍爱网诚聘高级前端开发工程师（深圳 10K+）</span><span class="muted">2016-04-20</span><span class="muted">评论()</span></a></li>
+				<li><a href="#"><span class="thumbnail"><img data-src="http://www.daqianduan.com/wp-content/uploads/2016/04/boxiaole.png" class="thumb" src="http://www.daqianduan.com/wp-content/uploads/2016/04/boxiaole.png" style="display: block;"></span><span class="text">58赶集集团招聘前端开发工程师 （北京 15K+）</span><span class="muted">2016-04-12</span><span class="muted">评论()</span></a></li>
+				<li><a href="#"><span class="thumbnail"><img data-src="http://www.daqianduan.com/wp-content/uploads/2015/09/ll.jpg" class="thumb" src="http://www.daqianduan.com/wp-content/uploads/2015/09/ll.jpg" style="display: block;"></span><span class="text">郑州珑凌科技有限公司招聘高级前端开发工程师</span><span class="muted">2016-03-25</span><span class="muted">评论()</span></a></li>
 			</ul>
 		</div>
-
-		<div class="widget widget_ui_tags">
+		<!-- <div class="widget widget_ui_tags">
 			<h3>标签云</h3>
 			<div class="items">
 				<a href="http://www.daqianduan.com/tag/front-skills">前端技巧 (61)</a>
@@ -209,10 +170,7 @@
 				<a href="http://www.daqianduan.com/tag/css3-explain">CSS3详解 (11)</a>
 				<a href="http://www.daqianduan.com/tag/search-engine">搜索引擎 (10)</a>
 			</div>
-		</div>
-		<div class="widget widget_ui_ads">
-			<div class="item">ssssss</div>
-		</div>
+		</div> -->
 	</aside>
 </section>
 
