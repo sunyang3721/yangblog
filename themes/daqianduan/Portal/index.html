@@ -12,6 +12,9 @@
 <section class="container">
 	<div class="content-wrap">
 		<div class="content">
+			<php>
+			$home_slides=sp_getslide("home");
+			</php>
 			<div id="homeslider" class="carousel slide" data-ride="carousel">
 				<ol class="carousel-indicators">
 					<li data-target="#homeslider" data-slide-to="0" class="active"></li>
@@ -19,15 +22,11 @@
 					<li data-target="#homeslider" data-slide-to="2"></li>
 				</ol>
 				<div class="carousel-inner" role="listbox">
-					<div class="item active">
-						<a target="_blank" href="http://themebetter.com/theme/xiu"><img src="picture/hs-xiu.jpg" alt="xiu主题"></a>
+					<foreach name="home_slides" item="vo">
+					<div class="item <eq name="key" value='0'> active </eq>">
+						<a target="_blank" href="{$vo.slide_url}"><img src="{:sp_get_asset_upload_path($vo['slide_pic'])}" alt="{$vo.slide_name}"></a>
 					</div>
-					<div class="item">
-						<a target="_blank" href="http://www.daqianduan.com/job-new"><img src="picture/hs-job.jpg" alt="免费前端招聘"></a>
-					</div>
-					<div class="item">
-						<a target="_blank" href="http://www.daqianduan.com/nav"><img src="picture/hs-nav.jpg" alt="前端开发导航"></a>
-					</div>
+					</foreach>
 				</div>
 				<a class="left carousel-control" href="#homeslider" role="button" data-slide="prev">
 					<i class="fa fa-angle-left"></i>
