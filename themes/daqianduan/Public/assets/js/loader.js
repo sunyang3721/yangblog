@@ -50,7 +50,7 @@ require.config({
 		'router'        : 'libs/router.min',
 		'lazyload'      : 'libs/lazyload.min',
 		'prettyprint'   : 'libs/prettyprint',
-		'main'          : 'main',
+		//'main'          : 'main',
 		'comment'       : 'comment',
 		'theme'         : 'theme',
 		'user'          : 'user'
@@ -59,5 +59,6 @@ require.config({
 })
 
 require(['jquery'], function (){
-	require(['main'])
+	//开发完成最后再补充
+	// require(['main'])
 })
