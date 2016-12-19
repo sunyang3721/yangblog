@@ -35,16 +35,16 @@
         //工具栏上的所有的功能按钮和下拉框，可以在new编辑器的实例时选择自己需要的从新定义
         , toolbars: [[
             'fullscreen', 'source', '|', 'undo', 'redo', '|',
-            'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc', '|',
+            'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', /*'autotypeset', */'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', /*'selectall', 'cleardoc',*/ '|',
             'rowspacingtop', 'rowspacingbottom', 'lineheight', '|',
             'customstyle', 'paragraph', 'fontfamily', 'fontsize', '|',
             'directionalityltr', 'directionalityrtl', 'indent', '|',
             'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 'touppercase', 'tolowercase', '|',
             'link', 'unlink', 'anchor', '|', 'imagenone', 'imageleft', 'imageright', 'imagecenter', '|',
-            'simpleupload', 'insertimage', 'emotion', /*'scrawl',*/ 'insertvideo', 'music', 'attachment', 'map', /*'gmap',*/ 'insertframe', 'insertcode', /*'webapp',*/ 'pagebreak', 'template', 'background', '|',
-            'horizontal', 'date', 'time', 'spechars', 'snapscreen', 'wordimage', '|',
+            'simpleupload', 'insertimage',/* 'emotion', */ /*'scrawl',*/ /* 'insertvideo', 'music',*/ 'attachment',/* 'map',*/ /*'gmap',*/ /*'insertframe',*/ 'insertcode', /*'webapp',*/ /*'pagebreak', 'template', 'background',*/ '|',
+            'horizontal', /*'date', 'time', 'spechars', 'snapscreen', 'wordimage', '|',
             'inserttable', 'deletetable', 'insertparagraphbeforetable', 'insertrow', 'deleterow', 'insertcol', 'deletecol', 'mergecells', 'mergeright', 'mergedown', 'splittocells', 'splittorows', 'splittocols', 'charts', '|',
-            'print', 'preview', 'searchreplace', 'help', 'drafts'
+            'print', */ 'preview', 'searchreplace', /*'help', 'drafts' */
         ]]
     	//,allowDivTransToP:false
         //当鼠标放在工具栏上时显示的tooltip提示,留空支持自动多语言配置，否则以配置值为准
@@ -201,7 +201,7 @@
 
         //paragraph
         //段落格式 值留空时支持多语言自动识别，若配置，则以配置值为准
-        //,'paragraph':{'p':'', 'h1':'', 'h2':'', 'h3':'', 'h4':'', 'h5':'', 'h6':''}
+        ,'paragraph':{'p':'', 'h1':'', 'h2':'', 'h3':'', 'h4':'', 'h5':'', 'h6':''}
 
         //rowspacingtop
         //段间距 值和显示的名字相同
@@ -224,12 +224,12 @@
         //label 显示的名字也是用来标识不同类型的标识符，注意这个值每个要不同，
         //style 添加的样式
         //每一个对象就是一个自定义的样式
-        //,'customstyle':[
-        //    {tag:'h1', name:'tc', label:'', style:'border-bottom:#ccc 2px solid;padding:0 4px 0 0;text-align:center;margin:0 0 20px 0;'},
-        //    {tag:'h1', name:'tl',label:'', style:'border-bottom:#ccc 2px solid;padding:0 4px 0 0;margin:0 0 10px 0;'},
-        //    {tag:'span',name:'im', label:'', style:'font-style:italic;font-weight:bold'},
-        //    {tag:'span',name:'hi', label:'', style:'font-style:italic;font-weight:bold;color:rgb(51, 153, 204)'}
-        //]
+        ,'customstyle':[
+           {tag:'code',name:'co',label:'标签',style:'font-family: Menlo, Monaco, Consolas; font-size: 0.92857em; color: rgb(204, 17, 51); display: inline; margin: 0px 5px; padding: 3px 5px; border: 1px solid rgb(221, 221, 221); white-space: normal; background: rgb(240, 240, 236);'},
+           {tag:'h4',name:'zb',label:'正文标题',style:'color: rgb(68, 68, 68); font-family:Microsoft YaHei; font-size: 17px; font-weight:bold;line-height: 32.64px; white-space: normal;'},
+           {tag:'span',name:'im', label:'', style:'font-style:italic;font-weight:bold'},
+           {tag:'span',name:'hi', label:'', style:'font-style:italic;font-weight:bold;color:rgb(51, 153, 204)'}
+        ]
 
         //打开右键菜单功能
         //,enableContextMenu: true
