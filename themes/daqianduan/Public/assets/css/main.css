@@ -728,7 +728,8 @@ body{
 	background-color: #fff;
 	margin-bottom: -1px;
 }
-.excerpt-1{border-radius: 4px 4px 0 0}
+.excerpt-text{padding-left: 20px;}
+.excerpt-1{border-radius: 4px}
 .excerpt-10{border-radius: 0 0 4px 4px}
 .excerpt:hover{
 	background-color: #FAFDFF;

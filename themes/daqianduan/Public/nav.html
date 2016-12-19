@@ -15,46 +15,24 @@
 		  	$dropdown='';
 		  	echo sp_get_menu("main",$effected_id,$filetpl,$foldertpl,$ul_class,$li_class,$style,$showlevel,$dropdown);
 		?>
-		<!-- <ul class="site-nav site-navbar">
-			<li class="navto-home active"><a href="http://www.daqianduan.com">首页</a></li>
-			<li class="navto-wp"><a href="http://themebetter.com">Wordpress主题</a>
-				<ul class="sub-menu">
-					<li class="navto-htmlcss"><a href="http://www.daqianduan.com/front/htmlcss">HTML/CSS</a></li>
-					<li class="navto-javascript"><a href="http://www.daqianduan.com/front/javascript">Javascript</a></li>
-					<li class="navto-news"><a href="http://www.daqianduan.com/front/news">前端资讯</a></li>
-					<li class="navto-resource"><a href="http://www.daqianduan.com/front/resource">技巧资源</a></li>
-				</ul>
-			</li>
-			<li class="navto-front"><a href="http://www.daqianduan.com/front">前端开发 <i class="fa fa-angle-down"></i></a>
-				<ul class="sub-menu">
-					<li class="navto-htmlcss"><a href="http://www.daqianduan.com/front/htmlcss">HTML/CSS</a></li>
-					<li class="navto-javascript"><a href="http://www.daqianduan.com/front/javascript">Javascript</a></li>
-					<li class="navto-news"><a href="http://www.daqianduan.com/front/news">前端资讯</a></li>
-					<li class="navto-resource"><a href="http://www.daqianduan.com/front/resource">技巧资源</a></li>
-				</ul>
-			</li>
-			<li class="navto-job"><a href="http://www.daqianduan.com/job">前端开发招聘</a></li>
-			<li class="navto-nav"><a href="http://www.daqianduan.com/nav">前端开发导航</a></li>
-			<li class="navto-search"><a href="javascript:;" class="search-show active"><i class="fa fa-search"></i></a></li>
-		</ul> -->
+		
 		<div class="topbar">
 		<?php
 			$oldnav =  sp_get_menu_tree('2');  //副导航
 		?>
 			<ul class="site-nav topmenu">
-			<volist name="oldnav" id="vo">
-				<li><a href="{$vo['href']}" target="{$vo['target']}"><b class="{$vo['icon']}"></b> {$vo['label']}</a></li>
-			</volist>
-				<!-- <li><a href="http://www.daqianduan.com/contact">联系我们</a></li>
-				<li><a href="http://www.daqianduan.com/tools">前端工具箱</a></li>
-				<li><a href="http://www.daqianduan.com/links">友情链接</a></li>
-				<li>
-					<a href="http://www.daqianduan.com/about">关注大前端 <i class="fa fa-angle-down"></i></a>
-					<ul class="sub-menu">
-						<li><a target="_blank" rel="external nofollow" href="http://www.daqianduan.com/go/feedmail"><i class="fa fa-envelope-o"></i> 邮件订阅更新</a></li>
-						<li><a target="_blank" href="http://www.daqianduan.com/feed"><i class="fa fa-rss"></i> RSS订阅</a></li>
-					</ul>
-				</li> -->
+				<volist name="oldnav" id="vo">
+					<li>
+						<a href="{$vo['href']}" target="{$vo['target']}"><i class="{$vo['icon']}"></i> {$vo['label']}</a>
+						<neq name="vo['child']|count" value='0'>
+							<ul class="sub-menu">
+								<volist name="vo['child']" id="co">
+									<li><a target="{$co['target']}" href="{$co['href']}"><i class="{$co['icon']}"></i> {$co['label']}</a></li>
+								</volist>
+							</ul>
+						</neq>
+					</li>
+				</volist>
 			</ul>
 		</div>
 	</div>
