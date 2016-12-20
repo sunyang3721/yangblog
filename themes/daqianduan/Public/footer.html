@@ -9,15 +9,26 @@
 <footer class="footer">
     <div class="container">
         <p class="footer-logo">
-            <i class="fa">洋葱技术博客</i>
+            <i class="fa">{$site_name}</i>
         </p>
+        <?php
+			$fooenav =  sp_get_menu_tree('3');  //底部导航
+		?>
         <p class="footer-navs">
-            <a href="/about">关于我们</a><a href="/ads">广告合作</a><a href="/disclaimer">免责声明</a>
+			<volist name="fooenav" id="vo">
+				<a href="{$vo['href']}" target="{$vo['target']}"><i class="{$vo['icon']}"></i> {$vo['label']}</a>
+			</volist>
         </p>
-        <p class="footer-links">
-            <a target="_blank" href="http://www.daqianduan.com">大前端</a><a target="_blank" href="http://themebetter.com">WordPress主题</a><a target="_blank" href="http://themebetter.com">WordPress中文主题</a><a target="_blank" href="http://themebetter.com/course">WordPress教程</a><a target="_blank" href="http://themebetter.com/blogs">博客导航</a><a target="_blank" href="http://s.click.taobao.com/t?e=m%3D2%26s%3Dj2RAze3XQEwcQipKwQzePCperVdZeJviEViQ0P1Vf2kguMN8XjClAtBXBSxhUdbP7UHbJ4Ck3Og224abtBd47OrpJ5C0sDS5j7OotfTSvdoEK08Ctmo9qTDVuRn8ddiDsEVVC24eqozcHtRpEUy6RHVyxRO0gvF4QxJtmCgOmCLXl8Q7TEjBF%2BX11FSyvDCnQiv%2BJKjlPObGDmntuH4VtA%3D%3D">推荐云服务器</a>        </p>
+        <!-- <p class="footer-links">
+            <a target="_blank" href="http://www.daqianduan.com">大前端</a>
+            <a target="_blank" href="http://themebetter.com">WordPress主题</a>
+            <a target="_blank" href="http://themebetter.com">WordPress中文主题</a>
+            <a target="_blank" href="http://themebetter.com/course">WordPress教程</a>
+            <a target="_blank" href="http://themebetter.com/blogs">博客导航</a>
+            <a target="_blank" href="#">推荐云服务器</a>
+         </p> -->
         <p class="footer-copyright">
-            © 2016 <a href="http://themebetter.com">themebetter</a> 更好的<a href="http://themebetter.com">WordPress主题</a>
+            © 2016 <a href="#">ICP232343234</a>
         </p>
     </div>
 </footer>

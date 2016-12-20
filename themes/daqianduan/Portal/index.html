@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-	<html>
-	<head>
-		<title>{$site_seo_title} {$site_name}</title>
-		<meta name="keywords" content="{$site_seo_keywords}" />
-		<meta name="description" content="{$site_seo_description}">
-		<tc_include file="Public:head" />
-	</head>
+<html>
+<head>
+	<title>{$site_seo_title} {$site_name}</title>
+	<meta name="keywords" content="{$site_seo_keywords}" />
+	<meta name="description" content="{$site_seo_description}">
+	<tc_include file="Public:head" />
+</head>
 <body>
 <tc_include file="Public:nav" />
 
@@ -15,6 +15,7 @@
 			<php>
 			$home_slides=sp_getslide("home");
 			</php>
+			<php>if(!empty($home_slides)){</php>
 			<div id="homeslider" class="carousel slide" data-ride="carousel">
 				<ol class="carousel-indicators">
 					<foreach name="home_slides" item="vo">
@@ -35,6 +36,7 @@
 					<i class="fa fa-angle-right"></i>
 				</a>
 			</div>
+			<php>}</php>
 			<article class="excerpt-see excerpt-see-index">
 				    {:sp_getad("home")}				
 			</article>
@@ -45,21 +47,21 @@
 				</ul>
 			</div>
 			<php>
-				$list_all=sp_sql_posts_paged("field:post_title,post_excerpt,object_id,smeta,term_id;order:listorder asc;",5); 
+				$list_all=sp_sql_posts_paged("field:post_title,post_hits,post_like,post_modified,recommended,post_excerpt,object_id,smeta,term_id;order:post_modified desc;",5); 
 			</php>
 			<foreach name="list_all['posts']" item="vo">
 				<php>$smeta=json_decode($vo['smeta'],true);</php>
 				<if condition="empty($smeta['thumb'])"> 
 					<article class="excerpt excerpt-1 excerpt-text">
 						<header>
-							<a class="cat" href="http://www.daqianduan.com/wp">{$vo['term_id']}<i></i></a> 
+							<a class="cat" href="#">{:sp_get_term($vo['term_id'])['name']}<i></i></a> 
 							<h2>
-								<a href="{:leuu('article/index',array('id'=>$vo['object_id'],'cid'=>$vo['term_id']))}" title="xxx">{$vo['post_title']}</a>
+								<a href="{:leuu('article/index',array('id'=>$vo['object_id'],'cid'=>$vo['term_id']))}" title="{$vo['post_title']}"><eq name="vo['recommended']" value="1"><b class="red">[推荐]</b></eq> {$vo['post_title']}</a>
 							</h2>
 						</header>
 						<p class="meta">
-							<time><i class="fa fa-clock-o"></i>2016-01-15</time>
-							<span class="pv"><i class="fa fa-eye"></i>阅读(29671)</span>
+							<time><i class="fa fa-clock-o"></i>{$vo['post_modified']}</time>
+							<span class="pv"><i class="fa fa-eye"></i>阅读({$vo['post_hits']})</span>
 							<span class="pc"><i class="fa fa-comments-o"></i>评论(<span class="cy_cmt_count" >666</span>)</span>
 						</p>
 						<p class="note">{:msubstr($vo['post_excerpt'],0,200)}</p>
@@ -70,14 +72,14 @@
 							<img data-src="{:sp_get_asset_upload_path($smeta['thumb'])}" class="thumb"/>
 						</a>
 						<header>
-							<a class="cat" href="http://www.daqianduan.com/wp">{$vo['term_id']}<i></i></a> 
+							<a class="cat" href="#">{:sp_get_term($vo['term_id'])['name']}<i></i></a> 
 							<h2>
-								<a href="{:leuu('article/index',array('id'=>$vo['object_id'],'cid'=>$vo['term_id']))}" title="xxx">{$vo['post_title']}</a>
+								<a href="{:leuu('article/index',array('id'=>$vo['object_id'],'cid'=>$vo['term_id']))}" title="{$vo['post_title']}"><eq name="vo['recommended']" value="1"><b class="red">[推荐]</b></eq> {$vo['post_title']}</a>
 							</h2>
 						</header>
 						<p class="meta">
-							<time><i class="fa fa-clock-o"></i>2016-01-15</time>
-							<span class="pv"><i class="fa fa-eye"></i>阅读(29671)</span>
+							<time><i class="fa fa-clock-o"></i>{$vo['post_modified']}</time>
+							<span class="pv"><i class="fa fa-eye"></i>阅读({$vo['post_hits']})</span>
 							<span class="pc"><i class="fa fa-comments-o"></i>评论(<span class="cy_cmt_count" >666</span>)</span>
 						</p>
 						<p class="note">{:msubstr($vo['post_excerpt'],0,200)}</p>
@@ -95,6 +97,28 @@
 	</div>
 	
 	<aside class="sidebar">
+		<div class="widget widget-tops affix-top" style="top: 0px;">
+			<ul class="widget-nav">
+				<li class="active">网站公告</li>
+				<li class="">会员中心</li>
+			</ul>
+			<ul class="widget-navcontent">
+				<li class="item item-01 active">
+				<ul>
+					<li><time>06-30</time><a target="_blank" href="http://demo.themebetter.com/dux/106.html">大前端和阿里百秀背后的团队</a></li>
+					<li><time>06-30</time><a target="_blank" href="http://demo.themebetter.com/dux/104.html">你是否希望大前端做服务器合租代管服务？</a></li>
+					<li><time>06-30</time><a target="_blank" href="http://demo.themebetter.com/dux/101.html">大前端D8主题等其他主题支持wordpress 3.8版本</a></li>
+				</ul>
+				</li>
+				<li class="item item-02">
+				<h4>需要登录才能进入会员中心</h4>
+				<p>
+					<a href="javascript:;" class="btn btn-primary signin-loader">立即登录</a>
+					<a href="javascript:;" class="btn btn-default signup-loader">现在注册</a>
+				</p>
+				</li>
+			</ul>
+		</div>
 		{:sp_getad("ad_right_1")}
 		{:sp_getad("ad_right_2")}
 		{:sp_getad("ad_right_3")}
@@ -103,8 +127,8 @@
 		{:sp_getad("ad_right_6")}
 		{:sp_getad("ad_right_7")}
 		{:sp_getad("ad_right_8")}
-		<div class="widget widget_ui_posts hide">
-			<h3>最新发布</h3>
+		<div class="widget widget_ui_posts">
+			<h3>热门文章</h3>
 			<ul>
 				<li><a href="#"><span class="thumbnail"><img data-src="http://www.daqianduan.com/wp-content/uploads/2016/08/MobvistaLOGO.jpg" class="thumb" src="http://www.daqianduan.com/wp-content/uploads/2016/08/MobvistaLOGO.jpg" style="display: block;"></span><span class="text">Mobvista-汇量科技招聘前端H5工程师（北京 20K+）</span><span class="muted">2016-08-22</span><span class="muted">评论()</span></a></li>
 				<li><a href="#"><span class="thumbnail"><img data-src="http://www.daqianduan.com/wp-content/uploads/2016/08/qxwzLOGO.jpg" class="thumb" src="http://www.daqianduan.com/wp-content/uploads/2016/08/qxwzLOGO.jpg" style="display: block;"></span><span class="text">阿里-千寻招聘资深前端（上海）</span><span class="muted">2016-08-22</span><span class="muted">评论()</span></a></li>

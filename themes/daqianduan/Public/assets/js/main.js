@@ -364,7 +364,7 @@ if( $('.bdsharebuttonbox').length ){
         },
         share: [{
             // "bdSize": 12,
-            bdCustomStyle: jsui.uri + '/css/share.css'
+            bdCustomStyle: './themes/daqianduan/Public/assets/css/share.css'
         }]/*,
         slide : {    
             bdImg : 4,
