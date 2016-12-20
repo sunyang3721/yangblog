@@ -51,7 +51,6 @@ require.config({
 		'lazyload'      : 'libs/lazyload.min',
 		'prettyprint'   : 'libs/prettyprint',
 		//'main'          : 'main',
-		'comment'       : 'comment',
 		'theme'         : 'theme',
 		'user'          : 'user'
 

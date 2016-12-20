@@ -110,7 +110,9 @@ if( $('.prettyprint').length ){
 */
 jsui.rb_comment = ''
 if (jsui.bd.hasClass('comment-open')) {
-    jsui.rb_comment = "<li><a href=\"javascript:(scrollTo('#comments',-15));\"><i class=\"fa fa-comments\"></i></a><h6>去评论<i></i></h6></li>"
+    //jsui.rb_comment = "<li><a href=\"javascript:(scrollTo('#comments',-15));\"><i class=\"fa fa-comments\"></i></a><h6>去评论<i></i></h6></li>"
+    jsui.rb_comment = ""
+
 }
 
 jsui.bd.append('\
