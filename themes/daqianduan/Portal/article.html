@@ -13,34 +13,18 @@
 	<div class="content-wrap">
 		<div class="content">
 			<header class="article-header">
-				<h1 class="article-title"><a href="http://demo.themebetter.com/dux/73.html">传苹果正在开发自家的触摸显示集成技术，未来iPhone将取消Home键</a></h1>
+				<h1 class="article-title"><a href="#">{$post_title}</a></h1>
 				<div class="article-meta">
-					<span class="item">2015-09-06</span>
-					<span class="item">来源：36kr</span><span class="item">分类：<a href="http://demo.themebetter.com/dux/tech" rel="category tag">科技</a> / <a href="http://demo.themebetter.com/dux/m" rel="category tag">移动</a></span>
-					<span class="item post-views">阅读(7389)</span><span class="item">评论(11)</span>
+					<span class="item">{$post_modified}</span>
+					<span class="item">来源：{$post_source|default="$site_name"}</span><span class="item">分类： <a href="#" rel="category tag">{:sp_get_term($term_id)['name']}</a></span>
+					<span class="item post-views">阅读({$post_hits})</span><span class="item">评论(xxx)</span>
 					<span class="item"></span>
 				</div>
 			</header>
-			<article class="article-content">
-				<p>
-					<img class="alignnone size-full wp-image-74" src="picture/111.jpg" alt="1" width="640" height="427" srcset="picture/111-220x147.jpg 220w, picture/111.jpg 640w" sizes="(max-width: 640px) 100vw, 640px"/>
-				</p>
-				<p>
-					据台湾IC设计界的消息来源透露，苹果内部正在研发触摸与显示驱动集成（TDDI）单芯片解决方案用于未来的iPhone，消息还称苹果将会把指纹传感器也集成进屏幕里面。有了这些集成技术的支持，未来的iPhone将采用超薄超窄屏幕的全屏幕设计，也就是说Home键将被取消。
-				</p>
-				<p>
-					苹果是少数几家保留物理键的智能手机厂商之一，但最近几年有关它要取消Home键的小道消息一直不绝于耳，DigiTimes的消息是最新的一个。尽管Appleinsider评价认为这个媒体在预测苹果产品未来计划方面成绩糟糕，但的确也时不时有过准确的预报。而苹果对将指纹传感器嵌入屏幕的技术确实也一直抱有兴趣，这从苹果对相关技术的收购和专利申请中可见一斑。2012年，苹果收购了传感器技术公司AuthenTec，并在随后推出了Touch ID。目前将指纹传感器嵌入Home键的做法只有苹果iPhone、iPad才有。
-				</p>
-				<p>
-					苹果此前已经自己设计了CPU等其他部件，随着苹果扩大零部件的自给自足，鉴于其产品在全球的销量规模，整个半导体业界都将受到显著影响。如该消息属实，可以预期，业内的并购事件将会增多。
-				</p>
-				<p>
-					不过，考虑到技术实现的难度和走向商用需要时间，近期内苹果推出这样设计的可能性很低。预计今年晚些时候推出的“iPhone 6s”在外观估计跟iPhone 6系列相差不大，关键更新也许是增加了Force Touch功能。
-				</p>
-			</article>
-			<!-- <div class="post-copyright">
-				未经允许不得转载：<a href="#">DUX主题演示</a> &raquo; <a href="#">传苹果正在开发自家的触摸显示集成技术，未来iPhone将取消Home键</a>
-			</div> -->
+			<article class="article-content">{$post_content}</article>
+			<div class="post-copyright">
+				转载请注明出处 洋葱技术博客：{$post_title} 
+			</div>
 			<div class="action-share bdsharebuttonbox">
 				<span style="position:relative;bottom:6px;">分享到：</span>
 				<a class="bds_qzone" data-cmd="qzone"></a>
