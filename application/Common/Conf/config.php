@@ -93,7 +93,8 @@ $configs= array(
         	'__UPLOAD__' => __ROOT__.'/data/upload/',
         	'__STATICS__' => __ROOT__.'/statics/',
             '__WEB_ROOT__'=>__ROOT__
-        )
+        ),
+        //'DATA_CACHE_TYPE'       => 'Redis'     //sunyang  redis缓存
 );
 
 return  array_merge($configs,$db,$runtime_config);
