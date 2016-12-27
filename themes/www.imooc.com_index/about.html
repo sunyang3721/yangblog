@@ -16,6 +16,7 @@
 <meta name="Description" content="关于我们xxxx"/>
 <link rel="stylesheet" href="css/moco.min.css" type="text/css" />
 <link rel="stylesheet" href="css/about.css" type="text/css" />
+<link rel="stylesheet" href="css/nav.css" type="text/css" />
 </head>
 <body >
 
@@ -28,16 +29,14 @@
         <i class="icon-menu"></i>
         </button>
         <ul class="nav-item">
-            <li class="set-btn visible-xs-block"><a href="#" target="_self">登录</a> / <a href="#" target="_self">注册</a></li>
+            <li class="set-btn visible-xs-block"><a href="./user.html" target="_self">登录</a> / <a href="#" target="_self">注册</a></li>
             <li>
-            <a href="#" target="_self">课程</a>
+            <a href="./course.html"  target="_self">课程</a>
             </li>
-            <li><a href="#" target="_self">职业路径<i class="icn-new"></i></a></li>
+            <li><a href="./shizhan.html" target="_self">实战<!-- <i class="icn-new"></i> --></a></li>
             <li>
-            <a href="#" target="_self">实战</a>
+            <a href="./student.html" target="_self">职业路径</a>
             </li>
-            <li><a href="#" target="_self">猿问</a></li>
-            <li><a href="#" target="_self">手记</a></li>
         </ul>
         <div id="login-area">
             <ul class="header-unlogin clearfix">
@@ -55,8 +54,7 @@
             </div>
              -->
             <div class="search-area" data-search="top-banner">
-                <input class="search-input" data-suggest-trigger="suggest-trigger" type="text" autocomplete="off">
-                <input type='hidden' class='btn_search' data-search-btn="search-btn"/>
+                <input class="search-input" data-suggest-trigger="suggest-trigger" placeholder="请输入关键字" type="text" autocomplete="off">
                 <ul class="search-area-result" data-suggest-result="suggest-result">
                 </ul>
             </div>
@@ -172,10 +170,6 @@
 <div id="J_GotoTop" class="elevator">
 
     <a href="#" class="elevator-msg" title="意见反馈"><i class="icon-feedback"></i></a>
-    <a href="#" class="elevator-app" title="app下载">
-      <i class="icon-appdownload"></i>
-      <div class="elevator-app-box"></div>
-    </a>
     <a href="#" class="elevator-weixin no-goto" id="js-elevator-weixin" title="官方微信">
       <i class="icon-wxgzh"></i>
       <div class="elevator-weixin-box"></div>

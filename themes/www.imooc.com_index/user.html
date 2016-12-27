@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="css/user-profile-less.css" type="text/css" />
 <link rel="stylesheet" href="css/layer.css" type="text/css" />
 <link rel="stylesheet" href="css/course.css" type="text/css" />
+<link rel="stylesheet" href="css/nav.css" type="text/css" />
 </head>
 <style type="text/css">
     .common-title a{color:#93999f;font-weight:400;font-size:14px;margin-right: 15px}
@@ -33,16 +34,14 @@
             <i class="icon-menu"></i>
             </button>
             <ul class="nav-item">
-                <li class="set-btn visible-xs-block"><a href="#" target="_self">登录</a> / <a href="#" target="_self">注册</a></li>
+                <li class="set-btn visible-xs-block"><a href="./user.html" target="_self">登录</a> / <a href="#" target="_self">注册</a></li>
                 <li>
-                <a href="#" class="active" target="_self">课程</a>
+                <a href="./course.html"  target="_self">课程</a>
                 </li>
-                <li><a href="#" target="_self">职业路径<i class="icn-new"></i></a></li>
+                <li><a href="./shizhan.html" target="_self">实战<!-- <i class="icn-new"></i> --></a></li>
                 <li>
-                <a href="#" target="_self">实战</a>
+                <a href="./student.html" target="_self">职业路径</a>
                 </li>
-                <li><a href="#" target="_self">猿问</a></li>
-                <li><a href="#" target="_self">手记</a></li>
             </ul>
             <div id="login-area">
                 <ul class="header-unlogin clearfix">
@@ -59,8 +58,7 @@
                     <a href="#" target="_blank">前端入门</a>
                 </div> -->
                 <div class="search-area" data-search="top-banner">
-                    <input class="search-input" data-suggest-trigger="suggest-trigger" type="text" autocomplete="off" value="">
-                    <input type='hidden' class='btn_search' data-search-btn="search-btn"/>
+                    <input class="search-input" data-suggest-trigger="suggest-trigger" type="text" placeholder="请输入关键字" autocomplete="off" value="">
                     <ul class="search-area-result" data-suggest-result="suggest-result">
                     </ul>
                 </div>
