@@ -1005,7 +1005,8 @@ body{
 	padding: 4px 7px 3px;
 	margin: 0 4px 4px 0;
 	color: #fff;
-	font-size: 12px;
+	font-size: 14px;
+	float: right;
 	background-color: #61B3E6;
 	opacity: 0.85;
 	filter:alpha(opacity=85);
@@ -2428,8 +2429,8 @@ pre.prettyprint.linenums ol li {
 	.footer nav{display: none;}
 	
 	.footer{padding:15px 10px;}
-	.footer .container{height:32px;overflow:hidden;line-height:16px;}
-	.footer a:first-child{display:block;}
+	.footer .container{/*height:32px;*/overflow:hidden;line-height:16px;}
+	/*.footer a:first-child{display:block;}*/
 
 
 	.m-mask{position: fixed;top: 0;right: 0;left: 0;bottom: 0;background-color: rgba(0,0,0,0);z-index: 98;overflow: hidden}

@@ -46,9 +46,11 @@
 				<a class="bds_mail" data-cmd="mail"></a>
 				<a class="bds_copy" data-cmd="copy"></a>
 			</div>
-			<!-- <div class="article-tags">
-				标签：<a href="#" rel="tag">ios</a><a href="#" rel="tag">iPhone</a>
-			</div> -->
+			<div class="article-tags">
+				<a href="#" rel="tag" data-toggle="tooltip" data-placement="top" title="ssssss">下一篇</a>
+				<a href="#" rel="tag" data-toggle="tooltip" data-placement="top" title="撒犯得上发射点">上一篇</a>
+			</div>
+			<div class="clear" style="clear:both"></div>
 			<div class="relates">
 				<div class="title">
 					<h3>相关推荐</h3>
@@ -64,14 +66,15 @@
 					<li><a href="#">ORB潜水头盔 回收自己氧气在水下呼吸</a></li>
 				</ul>
 			</div>
-			<!--PC版-->
-			<div id="SOHUCS" sid="{$id}"></div>
-			<script charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></script>
-			<script type="text/javascript">
-			window.changyan.api.config({
-			appid: 'cyr7zDFAB',
-			conf: 'prod_d7524e44b42e52a688f6b5cc14bb3006'
-			});
+			<!--PC和WAP自适应版-->
+			<div id="SOHUCS" sid="{$id}" ></div> 
+			<script type="text/javascript"> 
+			(function(){ 
+			var appid = 'cyr7zDFAB'; 
+			var conf = 'prod_d7524e44b42e52a688f6b5cc14bb3006'; 
+			var width = window.innerWidth || document.documentElement.clientWidth; 
+			if (width < 960) { 
+			window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); 
 			</script>
 		</div>
 	</div>
@@ -119,4 +122,10 @@
 <tc_include file="Public:scripts"/>
 {:hook('footer_end')}
 </body>
+<script type="text/javascript">
+	//上一篇 下一篇 提示
+	require(['bootstrap'], function (){
+		$(function () { $("[data-toggle='tooltip']").tooltip(); });
+	})
+</script>
 </html>
