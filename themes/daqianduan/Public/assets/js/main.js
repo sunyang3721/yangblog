@@ -366,7 +366,8 @@ if( $('.bdsharebuttonbox').length ){
         },
         share: [{
             // "bdSize": 12,
-            bdCustomStyle: './themes/daqianduan/Public/assets/css/share.css'
+            //开启伪静态 报错 改写绝对路径
+            bdCustomStyle: 'http://www.kuwuya.com/themes/daqianduan/Public/assets/css/share.css'
         }]/*,
         slide : {    
             bdImg : 4,
